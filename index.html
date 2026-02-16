@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>設問3①②トレーニング（練習問題1〜3）</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<header class="app-header">
+  <div class="title">設問3①②トレーニング（練習問題1〜3）</div>
+  <div class="subtitle">事例記録を読み、根拠（発言→解釈→①接続）を文章化する</div>
+</header>
+
+<main class="container">
+  <section class="card">
+    <div class="row">
+      <div class="pill">ケース</div>
+      <select id="caseSelect"></select>
+      <button class="btn ghost" id="btnNew">次へ</button>
+    </div>
+
+    <div class="caseTitle" id="caseTitle"></div>
+
+    <details class="caseBox" open>
+      <summary>事例記録（タップで行を選択できます）</summary>
+      <div id="caseLines" class="caseLines"></div>
+    </details>
+
+    <div class="row">
+      <div class="pill">選択した発言（根拠候補）</div>
+      <div class="spacer"></div>
+      <button class="btn ghost" id="btnCopyQuotes">選択発言をコピー</button>
+      <button class="btn danger" id="btnClearQuotes">選択をクリア</button>
+    </div>
+    <textarea id="quotesBox" rows="3" readonly></textarea>
+    <div class="counter" id="quotesCount"></div>
+
+    <div class="grid2">
+      <div>
+        <div class="row">
+          <div class="pill">設問3①：問題（2行）</div>
+          <div class="spacer"></div>
+          <button class="btn ghost" id="btnCopyP">回答をコピー</button>
+          <button class="btn danger" id="btnClearP">この回答を消す</button>
+        </div>
+        <textarea id="answerP" rows="4" placeholder="例：①〜こと、②〜ことが問題である。"></textarea>
+        <div class="counter" id="countP"></div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="pill">設問3②：根拠（3行）</div>
+          <div class="spacer"></div>
+          <button class="btn ghost" id="btnCopyE">回答をコピー</button>
+          <button class="btn danger" id="btnClearE">この回答を消す</button>
+        </div>
+        <textarea id="answerE" rows="6" placeholder="「〜」などの発言から、〇〇がうかがえる。…（①と接続）"></textarea>
+        <div class="counter" id="countE"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <button class="btn" id="btnToggleModel">模範を表示</button>
+      <button class="btn ghost" id="btnCopyModel">模範をコピー</button>
+      <div class="spacer"></div>
+      <div class="hint">※模範は「発言→解釈→①接続」構造で統一</div>
+    </div>
+
+    <div id="modelBox" class="modelBox hidden">
+      <div class="modelBlock"><div class="modelHead">設問3① 模範</div><div id="modelP"></div></div>
+      <div class="modelBlock"><div class="modelHead">設問3② 模範</div><div id="modelE"></div></div>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
